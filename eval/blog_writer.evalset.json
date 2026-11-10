@@ -1,0 +1,50 @@
+{
+  "eval_set_id": "blog_writer_eval_suite",
+  "name": "Blog Writer Multi-Agent Evaluation Suite",
+  "description": "End-to-end trajectory and response evaluation for research, outlining, drafting, SEO analysis, memory, and HITL saving.",
+  "eval_cases": [
+    {
+      "eval_id": "outline_and_seo_metrics_flow",
+      "conversation": [
+        {
+          "invocation_id": "turn_1",
+          "user_content": {
+            "role": "user",
+            "parts": [
+              {
+                "text": "Remember that my preferred tone is conversational and technical. Then analyze this short draft for the keyword 'Google ADK': '# Getting Started with Google ADK\n\nGoogle ADK helps developers build reliable multi-agent systems with structured tools and observability.'"
+              }
+            ]
+          },
+          "final_response": {
+            "role": "model",
+            "parts": [
+              {
+                "text": "I have saved your tone preference and analyzed the draft metrics for 'Google ADK'."
+              }
+            ]
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {
+                "name": "save_writer_memory",
+                "args": {
+                  "key": "preferred_tone",
+                  "value": "conversational and technical",
+                  "category": "preference"
+                }
+              },
+              {
+                "name": "analyze_blog_metrics",
+                "args": {
+                  "content": "# Getting Started with Google ADK\n\nGoogle ADK helps developers build reliable multi-agent systems with structured tools and observability.",
+                  "target_keyword": "Google ADK"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

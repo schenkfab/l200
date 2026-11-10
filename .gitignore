@@ -14,9 +14,18 @@ ENV/
 .env.*
 !.env.example
 
-# Google ADK / local state & generated output
+# Google ADK / local state, SQLite session DBs & generated output
 .adk/
 output/
+*.db
+*.sqlite
+*.sqlite3
+
+# Terraform state & cache
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
 
 # Distribution / packaging
 build/
